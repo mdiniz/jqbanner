@@ -14,7 +14,7 @@ var jqb_imgH = 250;
 jQuery(document).ready(function() {	
 	jqb_vTotal = $(".jqb_slides").children().size() -1;
 	$(".jqb_info").text($(".jqb_slide").attr("title"));	
-	jqb_intInterval = setInterval(jqb_fnLoop, jqb_vDuration);
+	jqb_intInterval = setInterval(function() { jqb_fnLoop(); }, jqb_vDuration);
 			
 	//Horizontal
 	$("#jqb_object").find(".jqb_slide").each(function(i) { 
@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
 
 function jqb_fnChange(){
 	clearInterval(jqb_intInterval);
-	jqb_intInterval = setInterval(jqb_fnLoop, jqb_vDuration);
+	jqb_intInterval = setInterval(function() { jqb_fnLoop(); }, jqb_vDuration);
 	jqb_fnLoop();
 }
 
